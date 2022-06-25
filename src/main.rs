@@ -30,12 +30,13 @@ fn main(){
     App::new()
         .add_plugins(DefaultPlugins)
         .add_startup_system(setup)
-        .add_system(update_scoreboard)
+        .add_system(processed)
         .run();
 }
 fn setup(mut commands: Commands, asset_server: Res<AssetServer>){
-
+    commands.spawn_bundle(OrthographicCameraBundle::new_2d());
+    commands.spawn_bundle(UiCameraBundle::default());
 }
-fn update_scoreboard() {
+fn processed() {
    
 }
