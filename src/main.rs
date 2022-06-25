@@ -22,10 +22,20 @@ enum Display {
     Good,
     Excellent
 }
+
+struct Count{
+    count: u32,
+}
 fn main(){
     App::new()
         .add_plugins(DefaultPlugins)
-        .add_startup_system()
-        .add_system()
+        .add_startup_system(setup)
+        .add_system(update_scoreboard)
         .run();
+}
+fn setup(mut commands: Commands, asset_server: Res<AssetServer>){
+
+}
+fn update_scoreboard() {
+   
 }
